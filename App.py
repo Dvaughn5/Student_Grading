@@ -150,7 +150,6 @@ while flag:
 		title = input()
 		print("Enter the number grade: ")
 		grade = input()
-		gina_swe_grades[title] = grade
 
 	# Editing grades 
 	elif action == 'edit':
@@ -164,4 +163,3 @@ while flag:
 	elif action == 'x':
 		flag = False
 
-		
