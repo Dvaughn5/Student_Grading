@@ -150,6 +150,7 @@ while flag:
 		title = input()
 		print("Enter the number grade: ")
 		grade = input()
+		# Leaving point
 
 	# Editing grades 
 	elif action == 'edit':
