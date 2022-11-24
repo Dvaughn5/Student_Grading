@@ -28,6 +28,8 @@ def average(dictionary):
 
 # DEFINING STUDENTS
 
+
+
 # Student courses
 gina_courses = ['SWE', 'CALC', 'ENGL']
 jay_courses = ['SWE', 'SCI', 'ENGL']
@@ -37,10 +39,10 @@ mark_courses = ['SWE', 'BIO', 'CHEM']
 
 # Gina
 gina_swe_grades = {
-				   'HW1' : random.randrange(50,100),
-				   'HW2' : random.randrange(50,100),
-				   'Test1' : random.randrange(50,100),
-				   'Test2' : random.randrange(50,100)
+				   'HW1' : 83,
+				   'HW2' : 77,
+				   'Test1' : 79,
+				   'Test2' : 92,
 				  }
 gina_calc_grades = {
 				   'HW1' : random.randrange(50,100),
@@ -123,14 +125,14 @@ stu.append(mark)
 
 
 
-# BEGINNING OF PROGRAM #
+# TRUE BEGINNING OF PROGRAM #
 
 flag = True # Setting a flag to determine the lifespan of the program.
 
 while flag:
 	
 	# Displaying all students
-	print("Currently enrolled students: \n")
+	print("\nCurrently enrolled students: \n")
 	for student in stu:
 		student.show()
 
@@ -150,7 +152,16 @@ while flag:
 		title = input()
 		print("Enter the number grade: ")
 		grade = input()
-		# Leaving point
+		
+		if stu_name == 'gina':
+			if course == 'swe':
+				gina_swe_grades[title] = grade
+			elif course == 'calc':
+				gina_calc_grades[title] = grade
+			elif course == 'engl':
+				gina_engl_grades[title] = grade
+			else:
+				print(f"{stu_name} isn't enrolled in {title}")
 
 	# Editing grades 
 	elif action == 'edit':
@@ -160,7 +171,7 @@ while flag:
 	elif action == 'delete':
 		pass
 
-	# Exiting
+	# Exiting program when prompted
 	elif action == 'x':
 		flag = False
 
