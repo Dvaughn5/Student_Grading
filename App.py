@@ -5,7 +5,6 @@
 import json
 import random
 
-
 # Student Class
 class Student():
 	def __init__(self, name, courses, grades):
@@ -137,8 +136,8 @@ while flag:
 		student.show()
 
 	# Prompting for action
-	print("What action would you like to complete? [add, edit, or delete grades]")
-	print("If you'd like to exit, type x ") # Exit point
+	print("\nWhat action would you like to complete? [add, edit, or delete grades]")
+	print("If you'd like to exit, type x ") # Exit point prompt
 	action = input()
 
 
@@ -153,6 +152,7 @@ while flag:
 		print("Enter the number grade: ")
 		grade = input()
 		
+		# GINA
 		if stu_name == 'gina':
 			if course == 'swe':
 				gina_swe_grades[title] = grade
@@ -160,16 +160,76 @@ while flag:
 				gina_calc_grades[title] = grade
 			elif course == 'engl':
 				gina_engl_grades[title] = grade
-			else:
-				print(f"{stu_name} isn't enrolled in {title}")
+
 
 	# Editing grades 
 	elif action == 'edit':
-		pass
+		print("Enter the name of the student you'd like to edit: ")
+		stu_name = input()
+		print("Enter the course for the desired edit: ")
+		course = input()
+
+		# GINA
+		if stu_name == 'gina':
+
+			# SWE
+			if course == 'swe':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{gina_swe_grades}")
+
+				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
+				asm_title = input()
+				print("Enter the new grade: ")
+				new_grade = input()
+
+				gina_swe_grades[asm_title] = new_grade # Updating grade
+
 
 	# Deleting grades 
 	elif action == 'delete':
-		pass
+		print("Enter the name of the student who's grade you'd like to delete: ")
+		stu_name = input()
+		print("Enter the course title of the grade you'd like to delete: ")
+		course = input()
+
+		# GINA
+		if stu_name == 'gina':
+			
+			# SWE
+			if course == 'swe':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{gina_swe_grades}")
+
+				print("\nEnter the homework / test you'd like to delete: [case for case, no spaces]")
+				asm_title = input()
+
+				del gina_swe_grades[asm_title]
+
+				print("\nThe grade has been successfully updated.\n")
+			
+			# CALC
+			elif course == 'calc':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{gina_calc_grades}")
+
+				print("\nEnter the homework / test you'd like to delete: [case for case, no spaces]")
+				asm_title = input()
+
+				del gina_calc_grades[asm_title]
+
+				print("\nThe grade has been successfully updated.\n")
+			
+			# ENGL
+			elif course == 'engl': 
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{gina_engl_grades}")
+
+				print("\nEnter the homework / test you'd like to delete: [case for case, no spaces]")
+				asm_title = input()
+
+				del gina_engl_grades[asm_title]
+
+				print("\nThe grade has been successfully updated.\n")
 
 	# Exiting program when prompted
 	elif action == 'x':
