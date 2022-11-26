@@ -34,7 +34,7 @@ def average(dictionary):
 	avg /= len(dictionary)
 	print(avg)
 
-courses = ['SWE', 'Calc', 'English', 'Algebra']
+#courses = ['SWE', 'Calc', 'English', 'Algebra']
 #print(Saleh['PSY'])
 
 #for course in courses:
