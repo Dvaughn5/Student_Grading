@@ -128,6 +128,8 @@ stu.append(mark)
 flag = True # Setting a flag to determine the lifespan of the program.
 
 while flag:
+
+	f = open("Grades.txt", mode = 'w', encoding = 'utf-8') # Opening file for writing and specifying encoding for platform dependency reasons
 	
 	# Displaying all students
 	print("\nCurrently enrolled students: \n")
@@ -155,19 +157,25 @@ while flag:
 		if stu_name == 'gina':
 			if course == 'swe':
 				gina_swe_grades[title] = grade
+				f.write(f"Gina SWE: {gina_swe_grades}\n")
 			elif course == 'calc':
 				gina_calc_grades[title] = grade
+				f.write(f"Gina CALC: {gina_calc_grades}\n")
 			elif course == 'engl':
 				gina_engl_grades[title] = grade
+				f.write(f"Gina ENGL: {gina_engl_grades}\n")
 
 		# JAY
 		if stu_name == 'jay':
 			if course =='swe':
 				jay_swe_grades[title] = grade
+				f.write(f"{jay_swe_grades}\n")
 			elif course == 'sci':
 				jay_sci_grades[title] = grade
+				f.write(f"{jay_sci_grades}\n")
 			elif course == 'engl':
 				jay_engl_grades[title] = grade
+				f.write(f"{jay_engl_grades}\n")
 
 		# MARK
 		if stu_name == 'mark':
@@ -450,3 +458,4 @@ while flag:
 	# Exiting program when prompted
 	elif action == 'x':
 		flag = False
+		f.close() # Closing the file
