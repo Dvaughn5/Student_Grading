@@ -37,22 +37,22 @@ mark_courses = ['SWE', 'BIO', 'CHEM']
 
 # Gina
 gina_swe_grades = {
-				   'HW1' : random.randrange(50,100),
-				   'HW2' : random.randrange(50,100),
-				   'Test1' : random.randrange(50,100),
-				   'Test2' : random.randrange(50,100)
+				   'hw1' : random.randrange(50,100),
+				   'hw2' : random.randrange(50,100),
+				   'test1' : random.randrange(50,100),
+				   'test2' : random.randrange(50,100)
 				  }
 gina_calc_grades = {
-				   'HW1' : random.randrange(50,100),
-				   'HW2' : random.randrange(50,100),
-				   'Test1' : random.randrange(50,100),
-				   'Test2' : random.randrange(50,100)
+				   'hw1' : random.randrange(50,100),
+				   'hw2' : random.randrange(50,100),
+				   'test1' : random.randrange(50,100),
+				   'test2' : random.randrange(50,100)
 				  }
 gina_engl_grades = {
-				   'HW1' : random.randrange(50,100),
-				   'HW2' : random.randrange(50,100),
-				   'Test1' : random.randrange(50,100),
-				   'Test2' : random.randrange(50,100)
+				   'hw1' : random.randrange(50,100),
+				   'hw2' : random.randrange(50,100),
+				   'test1' : random.randrange(50,100),
+				   'test2' : random.randrange(50,100)
 				  }
 gina_grades = {
 				'SWE' : average(gina_swe_grades),
@@ -62,22 +62,22 @@ gina_grades = {
 
 # Jay
 jay_swe_grades = {
-				   'HW1' : random.randrange(50,100),
-				   'HW2' : random.randrange(50,100),
-				   'Test1' : random.randrange(50,100),
-				   'Test2' : random.randrange(50,100)
+				   'hw1' : random.randrange(50,100),
+				   'hw2' : random.randrange(50,100),
+				   'test1' : random.randrange(50,100),
+				   'test2' : random.randrange(50,100)
 				  }
 jay_sci_grades = {
-				   'HW1' : random.randrange(50,100),
-				   'HW2' : random.randrange(50,100),
-				   'Test1' : random.randrange(50,100),
-				   'Test2' : random.randrange(50,100)
+				   'hw1' : random.randrange(50,100),
+				   'hw2' : random.randrange(50,100),
+				   'test1' : random.randrange(50,100),
+				   'test2' : random.randrange(50,100)
 				  }
 jay_engl_grades = {
-				   'HW1' : random.randrange(50,100),
-				   'HW2' : random.randrange(50,100),
-				   'Test1' : random.randrange(50,100),
-				   'Test2' : random.randrange(50,100)
+				   'hw1' : random.randrange(50,100),
+				   'hw2' : random.randrange(50,100),
+				   'test1' : random.randrange(50,100),
+				   'test2' : random.randrange(50,100)
 				  }
 jay_grades = {
 				'SWE' : average(jay_swe_grades),
@@ -87,22 +87,22 @@ jay_grades = {
 
 # Mark
 mark_swe_grades = {
-				   'HW1' : random.randrange(50,100),
-				   'HW2' : random.randrange(50,100),
-				   'Test1' : random.randrange(50,100),
-				   'Test2' : random.randrange(50,100)
+				   'hw1' : random.randrange(50,100),
+				   'hw2' : random.randrange(50,100),
+				   'test1' : random.randrange(50,100),
+				   'test2' : random.randrange(50,100)
 				  }
 mark_bio_grades = {
-				   'HW1' : random.randrange(50,100),
-				   'HW2' : random.randrange(50,100),
-				   'Test1' : random.randrange(50,100),
-				   'Test2' : random.randrange(50,100)
+				   'hw1' : random.randrange(50,100),
+				   'hw2' : random.randrange(50,100),
+				   'test1' : random.randrange(50,100),
+				   'test2' : random.randrange(50,100)
 				  }
 mark_chem_grades = {
-				   'HW1' : random.randrange(50,100),
-				   'HW2' : random.randrange(50,100),
-				   'Test1' : random.randrange(50,100),
-				   'Test2' : random.randrange(50,100)
+				   'hw1' : random.randrange(50,100),
+				   'hw2' : random.randrange(50,100),
+				   'test1' : random.randrange(50,100),
+				   'test2' : random.randrange(50,100)
 				  }
 mark_grades = {
 				'SWE' : average(mark_swe_grades),
@@ -160,6 +160,24 @@ while flag:
 			elif course == 'engl':
 				gina_engl_grades[title] = grade
 
+		# JAY
+		if stu_name == 'jay':
+			if course =='swe':
+				jay_swe_grades[title] = grade
+			elif course == 'sci':
+				jay_sci_grades[title] = grade
+			elif course == 'engl':
+				jay_engl_grades[title] = grade
+
+		# MARK
+		if stu_name == 'mark':
+			if course == 'swe':
+				mark_swe_grades[title] = grade
+			elif course == 'bio':
+				mark_bio_grades[title] = grade
+			elif course == 'chem':
+				mark_chem_grades[title] = grade
+
 
 	# Editing grades 
 	elif action == 'edit':
@@ -182,6 +200,126 @@ while flag:
 				new_grade = input()
 
 				gina_swe_grades[asm_title] = new_grade # Updating grade
+
+				print("\nThe grade has been successfully updated.\n")
+
+			# CALC
+			elif course == 'calc':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{gina_calc_grades}")
+
+				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
+				asm_title = input()
+				print("Enter the new grade: ")
+				new_grade = input()
+
+				gina_calc_grades[asm_title] = new_grade # Updating grade
+
+				print("\nThe grade has been successfully updated.\n")
+
+			# ENGL
+			elif course == 'engl':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{gina_engl_grades}")
+
+				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
+				asm_title = input()
+				print("Enter the new grade: ")
+				new_grade = input()
+
+				gina_engl_grades[asm_title] = new_grade # Updating grade
+
+				print("\nThe grade has been successfully updated.\n")
+
+		# JAY
+		if stu_name == 'jay':
+
+			# SWE
+			if course == 'swe':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{jay_swe_grades}")
+
+				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
+				asm_title = input()
+				print("Enter the new grade: ")
+				new_grade = input()
+
+				jay_swe_grades[asm_title] = new_grade # Updating grade
+
+				print("\nThe grade has been successfully updated.\n")
+
+			# SCI
+			elif course == 'sci':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{jay_sci_grades}")
+
+				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
+				asm_title = input()
+				print("Enter the new grade: ")
+				new_grade = input()
+
+				jay_sci_grades[asm_title] = new_grade # Updating grade
+
+				print("\nThe grade has been successfully updated.\n")
+
+			# ENGL
+			elif course == 'engl':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{jay_engl_grades}")
+
+				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
+				asm_title = input()
+				print("Enter the new grade: ")
+				new_grade = input()
+
+				jay_engl_grades[asm_title] = new_grade # Updating grade
+
+				print("\nThe grade has been successfully updated.\n")
+
+		# MARK
+		if stu_name == 'mark':
+
+			# SWE
+			if course == 'swe':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{mark_swe_grades}")
+
+				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
+				asm_title = input()
+				print("Enter the new grade: ")
+				new_grade = input()
+
+				mark_swe_grades[asm_title] = new_grade # Updating grade
+
+				print("\nThe grade has been successfully updated.\n")
+
+			# BIO
+			elif course == 'bio':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{mark_bio_grades}")
+
+				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
+				asm_title = input()
+				print("Enter the new grade: ")
+				new_grade = input()
+
+				mark_bio_grades[asm_title] = new_grade # Updating grade
+
+				print("\nThe grade has been successfully updated.\n")
+
+			# CHEM
+			elif course == 'chem':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{mark_chem_grades}")
+
+				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
+				asm_title = input()
+				print("Enter the new grade: ")
+				new_grade = input()
+
+				mark_chem_grades[asm_title] = new_grade # Updating grade
+
+				print("\nThe grade has been successfully updated.\n")
 
 
 	# Deleting grades 
@@ -229,6 +367,85 @@ while flag:
 				del gina_engl_grades[asm_title]
 
 				print("\nThe grade has been successfully updated.\n")
+
+		# JAY
+		if stu_name == 'jay':
+			
+			# SWE
+			if course == 'swe':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{jay_swe_grades}")
+
+				print("\nEnter the homework / test you'd like to delete: [case for case, no spaces]")
+				asm_title = input()
+
+				del jay_swe_grades[asm_title]
+
+				print("\nThe grade has been successfully updated.\n")
+			
+			# SCI
+			elif course == 'sci':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{jay_sci_grades}")
+
+				print("\nEnter the homework / test you'd like to delete: [case for case, no spaces]")
+				asm_title = input()
+
+				del jay_sci_grades[asm_title]
+
+				print("\nThe grade has been successfully updated.\n")
+			
+			# ENGL
+			elif course == 'engl': 
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{jay_engl_grades}")
+
+				print("\nEnter the homework / test you'd like to delete: [case for case, no spaces]")
+				asm_title = input()
+
+				del jay_engl_grades[asm_title]
+
+				print("\nThe grade has been successfully updated.\n")
+
+		# MARK
+		if stu_name == 'mark':
+			
+			# SWE
+			if course == 'swe':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{jay_swe_grades}")
+
+				print("\nEnter the homework / test you'd like to delete: [case for case, no spaces]")
+				asm_title = input()
+
+				del jay_swe_grades[asm_title]
+
+				print("\nThe grade has been successfully updated.\n")
+			
+			# BIO
+			elif course == 'bio':
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{mark_bio_grades}")
+
+				print("\nEnter the homework / test you'd like to delete: [case for case, no spaces]")
+				asm_title = input()
+
+				del mark_bio_grades[asm_title]
+
+				print("\nThe grade has been successfully updated.\n")
+			
+			# CHEM
+			elif course == 'chem': 
+				print(f"\nHere are the grades available for {stu_name} in {course}: \n")
+				print(f"{mark_chem_grades}")
+
+				print("\nEnter the homework / test you'd like to delete: [case for case, no spaces]")
+				asm_title = input()
+
+				del mark_chem_grades[asm_title]
+
+				print("\nThe grade has been successfully updated.\n")
+
 
 	# Exiting program when prompted
 	elif action == 'x':
