@@ -8,22 +8,42 @@ import random
 
 # Student Class
 class Student():
+	
+	# Initializing the student
 	def __init__(self, name, courses, grades):
 		self.name = name
 		self.courses = courses
 		self.grades = grades
 
+	# Method to display information about the student
 	def show(self):
 		print(f"Student Name: {self.name}")
 		print(f"Courses: {self.courses}")
 		print(f"Grades: {self.grades}\n")
 
+# Function to calculate grade average
 def average(dictionary):
+	
+	# Calculating percentage average
 	avg = 0
 	for key, val in dictionary.items():
 		avg += int(val)
 	avg /= len(dictionary)
-	return avg
+	
+	# Determining letter grade 
+	if avg >= 90 and avg <= 100:
+		letter_grade = 'A'
+	elif avg >= 80 and avg < 90:
+		letter_grade = 'B'
+	elif avg >= 70 and avg < 80:
+		letter_grade = 'C'
+	elif avg >= 60 and avg < 70:
+		letter_grade = 'D'
+	elif avg < 60:
+		letter_grade = 'F'
+
+	# Returning the average, and letter grade
+	return avg, letter_grade
 
 
 # DEFINING STUDENTS
@@ -129,7 +149,7 @@ flag = True # Setting a flag to determine the lifespan of the program.
 
 while flag:
 
-	f = open("Grades.txt", mode = 'w', encoding = 'utf-8') # Opening file for writing and specifying encoding for platform dependency reasons
+	### f = open("Grades.txt", mode = 'w', encoding = 'utf-8') # Opening file for writing and specifying encoding for platform dependency reasons
 	
 	# Displaying all students
 	print("\nCurrently enrolled students: \n")
@@ -155,27 +175,37 @@ while flag:
 		
 		# GINA
 		if stu_name == 'gina':
+			
+			# SWE
 			if course == 'swe':
 				gina_swe_grades[title] = grade
-				f.write(f"Gina SWE: {gina_swe_grades}\n")
+				
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Gina SWE grades: {gina_swe_grades}\n")
+
+			# CALC
 			elif course == 'calc':
 				gina_calc_grades[title] = grade
-				f.write(f"Gina CALC: {gina_calc_grades}\n")
+
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Gina CALC grades: {gina_calc_grades}\n")
+
+			# ENGL
 			elif course == 'engl':
 				gina_engl_grades[title] = grade
-				f.write(f"Gina ENGL: {gina_engl_grades}\n")
+
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Gina ENGL grades: {gina_engl_grades}\n")
 
 		# JAY
 		if stu_name == 'jay':
+			
 			if course =='swe':
 				jay_swe_grades[title] = grade
-				f.write(f"{jay_swe_grades}\n")
 			elif course == 'sci':
 				jay_sci_grades[title] = grade
-				f.write(f"{jay_sci_grades}\n")
 			elif course == 'engl':
 				jay_engl_grades[title] = grade
-				f.write(f"{jay_engl_grades}\n")
 
 		# MARK
 		if stu_name == 'mark':
@@ -458,4 +488,4 @@ while flag:
 	# Exiting program when prompted
 	elif action == 'x':
 		flag = False
-		f.close() # Closing the file
+		### f.close() # Closing the file
