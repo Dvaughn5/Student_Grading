@@ -1,3 +1,0 @@
-Gina SWE grades: {'hw1': 67, 'hw2': 62, 'test1': 58, 'test2': 55, 'hw3': '89'}
-Gina CALC grades: {'hw1': 70, 'hw2': 55, 'test1': 75, 'test2': 50, 'hw9': '100'}
-Gina ENGL grades: {'hw1': 59, 'hw2': 89, 'test1': 50, 'test2': 75, 'hw4': '92'}

@@ -1,8 +1,7 @@
 # This app needs to meet certain requirments.
 
 
-# Importing necessary modules 
-import json
+# Importing necessary modules
 import random
 
 
@@ -148,8 +147,6 @@ stu.append(mark)
 flag = True # Setting a flag to determine the lifespan of the program.
 
 while flag:
-
-	### f = open("Grades.txt", mode = 'w', encoding = 'utf-8') # Opening file for writing and specifying encoding for platform dependency reasons
 	
 	# Displaying all students
 	print("\nCurrently enrolled students: \n")
@@ -180,6 +177,7 @@ while flag:
 			if course == 'swe':
 				gina_swe_grades[title] = grade
 				
+				# Writing the grades to the text file.
 				with open("grades.txt", 'a', encoding = "utf-8") as f:
 					f.write(f"Gina SWE grades: {gina_swe_grades}\n")
 
@@ -202,19 +200,41 @@ while flag:
 			
 			if course =='swe':
 				jay_swe_grades[title] = grade
+
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Jay SWE grades: {jay_swe_grades}\n")
+
 			elif course == 'sci':
 				jay_sci_grades[title] = grade
+
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Jay SCI grades: {jay_sci_grades}\n")
+
 			elif course == 'engl':
 				jay_engl_grades[title] = grade
+
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Jay ENGL grades: {jay_engl_grades}\n")
 
 		# MARK
 		if stu_name == 'mark':
 			if course == 'swe':
 				mark_swe_grades[title] = grade
+
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Mark SWE grades: {mark_swe_grades}\n")
+
 			elif course == 'bio':
 				mark_bio_grades[title] = grade
+
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Mark BIO grades: {mark_bio_grades}\n")
+
 			elif course == 'chem':
 				mark_chem_grades[title] = grade
+
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Mark CHEM grades: {mark_chem_grades}\n")
 
 
 	# Editing grades 
@@ -239,6 +259,10 @@ while flag:
 
 				gina_swe_grades[asm_title] = new_grade # Updating grade
 
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Gina's updated SWE grades: {gina_swe_grades}\n")
+
 				print("\nThe grade has been successfully updated.\n")
 
 			# CALC
@@ -253,6 +277,10 @@ while flag:
 
 				gina_calc_grades[asm_title] = new_grade # Updating grade
 
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Gina's updated CALC grades: {gina_calc_grades}\n")
+
 				print("\nThe grade has been successfully updated.\n")
 
 			# ENGL
@@ -266,6 +294,10 @@ while flag:
 				new_grade = input()
 
 				gina_engl_grades[asm_title] = new_grade # Updating grade
+
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Gina's updated ENGL grades: {gina_engl_grades}\n")
 
 				print("\nThe grade has been successfully updated.\n")
 
@@ -284,6 +316,10 @@ while flag:
 
 				jay_swe_grades[asm_title] = new_grade # Updating grade
 
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Jay's updated SWE grades: {jay_swe_grades}\n")
+
 				print("\nThe grade has been successfully updated.\n")
 
 			# SCI
@@ -298,6 +334,10 @@ while flag:
 
 				jay_sci_grades[asm_title] = new_grade # Updating grade
 
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Jay's updated SCI grades: {jay_sci_grades}\n")
+
 				print("\nThe grade has been successfully updated.\n")
 
 			# ENGL
@@ -311,6 +351,10 @@ while flag:
 				new_grade = input()
 
 				jay_engl_grades[asm_title] = new_grade # Updating grade
+
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Jay's updated ENGL grades: {jay_engl_grades}\n")
 
 				print("\nThe grade has been successfully updated.\n")
 
@@ -329,6 +373,10 @@ while flag:
 
 				mark_swe_grades[asm_title] = new_grade # Updating grade
 
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Mark's updated SWE grades: {mark_swe_grades}\n")
+
 				print("\nThe grade has been successfully updated.\n")
 
 			# BIO
@@ -343,6 +391,10 @@ while flag:
 
 				mark_bio_grades[asm_title] = new_grade # Updating grade
 
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Mark's updated BIO grades: {mark_bio_grades}\n")
+
 				print("\nThe grade has been successfully updated.\n")
 
 			# CHEM
@@ -356,6 +408,10 @@ while flag:
 				new_grade = input()
 
 				mark_chem_grades[asm_title] = new_grade # Updating grade
+
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Mark's updated CHEM grades: {mark_chem_grades}\n")
 
 				print("\nThe grade has been successfully updated.\n")
 
@@ -380,6 +436,10 @@ while flag:
 
 				del gina_swe_grades[asm_title]
 
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Gina's SWE grades post deletion: {gina_swe_grades}\n")
+
 				print("\nThe grade has been successfully updated.\n")
 			
 			# CALC
@@ -392,6 +452,10 @@ while flag:
 
 				del gina_calc_grades[asm_title]
 
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Gina's CALC grades post deletion: {gina_calc_grades}\n")
+
 				print("\nThe grade has been successfully updated.\n")
 			
 			# ENGL
@@ -403,6 +467,10 @@ while flag:
 				asm_title = input()
 
 				del gina_engl_grades[asm_title]
+
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Gina's ENGL grades post deletion: {gina_engl_grades}\n")
 
 				print("\nThe grade has been successfully updated.\n")
 
@@ -419,6 +487,10 @@ while flag:
 
 				del jay_swe_grades[asm_title]
 
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Jay's SWE grades post deletion: {jay_swe_grades}\n")
+
 				print("\nThe grade has been successfully updated.\n")
 			
 			# SCI
@@ -431,6 +503,10 @@ while flag:
 
 				del jay_sci_grades[asm_title]
 
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Jay's SCI grades post deletion: {jay_sci_grades}\n")
+
 				print("\nThe grade has been successfully updated.\n")
 			
 			# ENGL
@@ -442,6 +518,10 @@ while flag:
 				asm_title = input()
 
 				del jay_engl_grades[asm_title]
+
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Jay's ENGL grades post deletion: {jay_engl_grades}\n")
 
 				print("\nThe grade has been successfully updated.\n")
 
@@ -458,6 +538,10 @@ while flag:
 
 				del jay_swe_grades[asm_title]
 
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Mark's SWE grades post deletion: {mark_swe_grades}\n")
+
 				print("\nThe grade has been successfully updated.\n")
 			
 			# BIO
@@ -469,6 +553,10 @@ while flag:
 				asm_title = input()
 
 				del mark_bio_grades[asm_title]
+
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Mark's BIO grades post deletion: {mark_bio_grades}\n")
 
 				print("\nThe grade has been successfully updated.\n")
 			
@@ -482,10 +570,13 @@ while flag:
 
 				del mark_chem_grades[asm_title]
 
+				# Writing the grades to the text file.
+				with open("grades.txt", 'a', encoding = "utf-8") as f:
+					f.write(f"Mark's CHEM grades post deletion: {mark_chem_grades}\n")
+
 				print("\nThe grade has been successfully updated.\n")
 
 
 	# Exiting program when prompted
 	elif action == 'x':
 		flag = False
-		### f.close() # Closing the file
