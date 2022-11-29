@@ -1,5 +1,11 @@
-# This app needs to meet certain requirments.
-
+# This app needs to meet certain requirments:
+	# Add, edit, and delete grades onto a storage medium
+	# Subprograms with parameter passing
+	# Abstract data types
+	# Encapsulation
+	# Exception handling
+	# Verify valid scores
+	# Documentation
 
 # Importing necessary modules
 import random
@@ -43,7 +49,7 @@ def average(dictionary):
 
 	# Returning the average, and letter grade
 	return avg, letter_grade
-
+		
 
 # DEFINING STUDENTS
 
@@ -161,14 +167,28 @@ while flag:
 
 	# Adding grades
 	if action == 'add':
-		print("Enter student name: ")
+		print("Enter student name: ") # Student nsme
 		stu_name = input()
-		print("Enter course: ")
+		print("Enter course: ") # Course title
 		course = input()
-		print("Enter the homework / test title: ")
+		print("Enter the homework / test title [In the format, 'hw#' / 'test#': ") # Homework / test title
 		title = input()
-		print("Enter the number grade: ")
-		grade = input()
+
+
+		print("Enter the number grade: [Must be a whole number]") # Number Grade
+
+		# Exception handling and score verification
+		try: # Score must be valid to continue
+			grade = int(input())
+			if grade >= 0 and grade <= 100: 
+				pass
+			else: # Stopping the program if the number is less than 0 or greater than 100
+				print("\nThe grade needs to be a number between 0 and 100.") 
+				print("Restart and enter a valid response.")
+				break 
+		except ValueError: # Catching ValueError if the user enters any value besides a float
+			print("Value must be of type int, or in other words a whole number.") 
+			break
 		
 		# GINA
 		if stu_name == 'gina':
@@ -254,8 +274,21 @@ while flag:
 
 				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
 				asm_title = input()
-				print("Enter the new grade: ")
-				new_grade = input()
+				
+				print("Enter the new grade: [Must be a whole number]")
+
+				# Exception handling and score verification
+				try: # Score must be valid to continue
+					new_grade = int(input())
+					if new_grade >= 0 and new_grade <= 100: 
+						pass
+					else: # Stopping the program if the number is less than 0 or greater than 100
+						print("\nThe grade needs to be a number between 0 and 100.") 
+						print("Restart and enter a valid response.")
+						break 
+				except ValueError: # Catching ValueError if the user enters any value besides a float
+					print("Value must be of type int, or in other words a whole number.") 
+					break
 
 				gina_swe_grades[asm_title] = new_grade # Updating grade
 
@@ -272,8 +305,21 @@ while flag:
 
 				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
 				asm_title = input()
-				print("Enter the new grade: ")
-				new_grade = input()
+				
+				print("Enter the new grade: [Must be a whole number]")
+
+				# Exception handling and score verification
+				try: # Score must be valid to continue
+					new_grade = int(input())
+					if new_grade >= 0 and new_grade <= 100: 
+						pass
+					else: # Stopping the program if the number is less than 0 or greater than 100
+						print("\nThe grade needs to be a number between 0 and 100.") 
+						print("Restart and enter a valid response.")
+						break 
+				except ValueError: # Catching ValueError if the user enters any value besides a float
+					print("Value must be of type int, or in other words a whole number.") 
+					break
 
 				gina_calc_grades[asm_title] = new_grade # Updating grade
 
@@ -290,8 +336,21 @@ while flag:
 
 				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
 				asm_title = input()
-				print("Enter the new grade: ")
-				new_grade = input()
+				
+				print("Enter the new grade: [Must be a whole number]")
+
+				# Exception handling and score verification
+				try: # Score must be valid to continue
+					new_grade = int(input())
+					if new_grade >= 0 and new_grade <= 100: 
+						pass
+					else: # Stopping the program if the number is less than 0 or greater than 100
+						print("\nThe grade needs to be a number between 0 and 100.") 
+						print("Restart and enter a valid response.")
+						break 
+				except ValueError: # Catching ValueError if the user enters any value besides a float
+					print("Value must be of type int, or in other words a whole number.") 
+					break
 
 				gina_engl_grades[asm_title] = new_grade # Updating grade
 
@@ -311,8 +370,21 @@ while flag:
 
 				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
 				asm_title = input()
-				print("Enter the new grade: ")
-				new_grade = input()
+				
+				print("Enter the new grade: [Must be a whole number]")
+
+				# Exception handling and score verification
+				try: # Score must be valid to continue
+					new_grade = int(input())
+					if new_grade >= 0 and new_grade <= 100: 
+						pass
+					else: # Stopping the program if the number is less than 0 or greater than 100
+						print("\nThe grade needs to be a number between 0 and 100.") 
+						print("Restart and enter a valid response.")
+						break 
+				except ValueError: # Catching ValueError if the user enters any value besides a float
+					print("Value must be of type int, or in other words a whole number.") 
+					break
 
 				jay_swe_grades[asm_title] = new_grade # Updating grade
 
@@ -329,8 +401,21 @@ while flag:
 
 				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
 				asm_title = input()
-				print("Enter the new grade: ")
-				new_grade = input()
+				
+				print("Enter the new grade: [Must be a whole number]")
+
+				# Exception handling and score verification
+				try: # Score must be valid to continue
+					new_grade = int(input())
+					if new_grade >= 0 and new_grade <= 100: 
+						pass
+					else: # Stopping the program if the number is less than 0 or greater than 100
+						print("\nThe grade needs to be a number between 0 and 100.") 
+						print("Restart and enter a valid response.")
+						break 
+				except ValueError: # Catching ValueError if the user enters any value besides a float
+					print("Value must be of type int, or in other words a whole number.") 
+					break
 
 				jay_sci_grades[asm_title] = new_grade # Updating grade
 
@@ -347,8 +432,21 @@ while flag:
 
 				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
 				asm_title = input()
-				print("Enter the new grade: ")
-				new_grade = input()
+				
+				print("Enter the new grade: [Must be a whole number]")
+
+				# Exception handling and score verification
+				try: # Score must be valid to continue
+					new_grade = int(input())
+					if new_grade >= 0 and new_grade <= 100: 
+						pass
+					else: # Stopping the program if the number is less than 0 or greater than 100
+						print("\nThe grade needs to be a number between 0 and 100.") 
+						print("Restart and enter a valid response.")
+						break 
+				except ValueError: # Catching ValueError if the user enters any value besides a float
+					print("Value must be of type int, or in other words a whole number.") 
+					break
 
 				jay_engl_grades[asm_title] = new_grade # Updating grade
 
@@ -368,8 +466,21 @@ while flag:
 
 				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
 				asm_title = input()
-				print("Enter the new grade: ")
-				new_grade = input()
+
+				print("Enter the new grade: [Must be a whole number]")
+
+				# Exception handling and score verification
+				try: # Score must be valid to continue
+					new_grade = int(input())
+					if new_grade >= 0 and new_grade <= 100: 
+						pass
+					else: # Stopping the program if the number is less than 0 or greater than 100
+						print("\nThe grade needs to be a number between 0 and 100.") 
+						print("Restart and enter a valid response.")
+						break 
+				except ValueError: # Catching ValueError if the user enters any value besides a float
+					print("Value must be of type int, or in other words a whole number.") 
+					break
 
 				mark_swe_grades[asm_title] = new_grade # Updating grade
 
@@ -386,8 +497,21 @@ while flag:
 
 				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
 				asm_title = input()
-				print("Enter the new grade: ")
-				new_grade = input()
+				
+				print("Enter the new grade: [Must be a whole number]")
+
+				# Exception handling and score verification
+				try: # Score must be valid to continue
+					new_grade = int(input())
+					if new_grade >= 0 and new_grade <= 100: 
+						pass
+					else: # Stopping the program if the number is less than 0 or greater than 100
+						print("\nThe grade needs to be a number between 0 and 100.") 
+						print("Restart and enter a valid response.")
+						break 
+				except ValueError: # Catching ValueError if the user enters any value besides a float
+					print("Value must be of type int, or in other words a whole number.") 
+					break
 
 				mark_bio_grades[asm_title] = new_grade # Updating grade
 
@@ -404,8 +528,21 @@ while flag:
 
 				print("Enter the homework / test you'd like to alter: [case for case, no spaces]")
 				asm_title = input()
-				print("Enter the new grade: ")
-				new_grade = input()
+				
+				print("Enter the new grade: [Must be a whole number]")
+
+				# Exception handling and score verification
+				try: # Score must be valid to continue
+					new_grade = int(input())
+					if new_grade >= 0 and new_grade <= 100: 
+						pass
+					else: # Stopping the program if the number is less than 0 or greater than 100
+						print("\nThe grade needs to be a number between 0 and 100.") 
+						print("Restart and enter a valid response.")
+						break 
+				except ValueError: # Catching ValueError if the user enters any value besides a float
+					print("Value must be of type int, or in other words a whole number.") 
+					break
 
 				mark_chem_grades[asm_title] = new_grade # Updating grade
 
