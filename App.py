@@ -162,15 +162,15 @@ while flag:
 	# Prompting for action
 	print("\nWhat action would you like to complete? [add, edit, or delete grades]")
 	print("If you'd like to exit, type x ") # Exit point prompt
-	action = input()
+	action = input().lower()
 
 
 	# Adding grades
 	if action == 'add':
 		print("Enter student name: ") # Student nsme
-		stu_name = input()
+		stu_name = input().lower()
 		print("Enter course: ") # Course title
-		course = input()
+		course = input().lower()
 		print("Enter the homework / test title [In the format, 'hw#' / 'test#': ") # Homework / test title
 		title = input()
 
@@ -260,9 +260,9 @@ while flag:
 	# Editing grades 
 	elif action == 'edit':
 		print("Enter the name of the student you'd like to edit: ")
-		stu_name = input()
+		stu_name = input().lower()
 		print("Enter the course for the desired edit: ")
-		course = input()
+		course = input().lower()
 
 		# GINA
 		if stu_name == 'gina':
@@ -556,9 +556,9 @@ while flag:
 	# Deleting grades 
 	elif action == 'delete':
 		print("Enter the name of the student who's grade you'd like to delete: ")
-		stu_name = input()
+		stu_name = input().lower()
 		print("Enter the course title of the grade you'd like to delete: ")
-		course = input()
+		course = input().lower()
 
 		# GINA
 		if stu_name == 'gina':
