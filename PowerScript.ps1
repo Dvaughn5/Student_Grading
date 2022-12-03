@@ -2,7 +2,7 @@
 New-Item -Path "C:\" -Name "StuGrading" -ItemType "directory"
 
 # Obtaining the executable from my github, and setting a path for the download
-$url = "https://github.com/Dvaughn5/Student_Grading/blob/master/StudentGrading" # Download from here
+$url = "https://github.com/Dvaughn5/Student_Grading/blob/master/StudentGrading?raw=true" # Download from here
 $path = "C:\StuGrading\StudentGrading.exe" # Store here 
 
 # Writing the request to download the executable 
