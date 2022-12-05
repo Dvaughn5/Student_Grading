@@ -26,3 +26,6 @@ Average Function:
 - Besides explicitly calling for an exit point, exception handling creates additional exit points. 
   + If the user enters an invalid grade the program will close, and the grade will not be added to the text document. 
 + If the user enters all valid information, the respective data will be written to a text document called 'grades.txt'
+
+## Powershell Script
+In theory, the script should download the python executable from this repository, install it on the user's C-drive in a folder created by the script, and create a desktop shortcut available for any user. The icon for the shortcut is also pulled from this repository. 
